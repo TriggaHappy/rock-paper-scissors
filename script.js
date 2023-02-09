@@ -1,6 +1,6 @@
-//function getComputerChoice
+//declare getComputerChoice, playersChoise
 const computerSelection = getComputerChoice()
-
+const playerSelection = getPlayerChoice()
 //randomly return Rock / Paper Scissors 
 function getComputerChoice() {
     //örray rock paper scissors
@@ -20,3 +20,21 @@ function getComputerChoice() {
     }
 }
 console.log(getComputerChoice())
+
+//function PlayerChoice
+function getPlayerChoice() {
+
+    let playerSelect = ["Rock", "Paper", "Scissors"];
+    const input = prompt("123?")
+
+    if (playerSelect === "Rock") {
+        return "Rock";
+    }
+    if (playerSelect === "Paper") {
+        return "Paper";
+    }
+    if (playerSelect === "Scissors") {
+        return "Scissors";
+    }
+}
+console.log(getPlayerChoice("Rock", "Paper", "Scissors"))
