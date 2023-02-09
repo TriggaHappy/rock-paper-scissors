@@ -9,13 +9,13 @@ function getComputerChoice() {
     let randomSelect = (Math.floor(Math.random() * computerSelect.length))
 
     //conditions
-    if (randomSelect === 1) {
+    if (randomSelect === 0) {
         return "Rock";
     };
-    if (randomSelect === 2) {
+    if (randomSelect === 1) {
         return "Paper";
     }
-    if (randomSelect === 3) {
+    if (randomSelect === 2) {
         return "Scissors";
     }
 }
