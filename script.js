@@ -1,40 +1,45 @@
-//declare getComputerChoice, playersChoise
-const computerSelection = getComputerChoice()
-const playerSelection = getPlayerChoice()
-//randomly return Rock / Paper Scissors 
-function getComputerChoice() {
-    //örray rock paper scissors
-    let computerSelect = ["Rock", "Paper", "Scissors"];
-    //randomize answer
-    let randomSelect = (Math.floor(Math.random() * computerSelect.length))
+console.log("Hi");
 
-    //conditions
-    if (randomSelect === 0) {
-        return "Rock";
-    };
-    if (randomSelect === 1) {
-        return "Paper";
+const options = ["rock", "paper", "scissors"];
+
+function getComputerChoice(){
+    const choice = options [Math.floor(Math.random() * options.length)];
+    return choice;
+    
+} console.log(getComputerChoice());
+
+function checkWinner(playerSelection, computerSelection){
+    if (playerSelection == computerSelection){
+        return "Tie";
     }
-    if (randomSelect === 2) {
-        return "Scissors";
+    else if(
+        (playerSelection == "rock" && computerSelection === "scissors") ||
+        (playerSelection == "scissors" && computerSelection === "paper") ||
+        (playerSelection == "paper" && computerSelection === "rock")
+    ){
+        return "Player";
+    }
+    else 
+        return "Computer";
+} 
+
+function playRound(playerSelection, computerSelection){
+    const result = checkWinner(playerSelection, computerSelection);
+    if (result == "Tie"){
+        return "Its a Tie! No one wins...";
+    }
+    else if (result == "Player")
+        return `Oh man, you won! ${playerSelection} beats ${computerSelection}.`;
+    
+    else (result == "Computer")
+        return "Dang the machine won buddy...";
+}
+
+function game(){
+    console.log("Welcome")
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection))
     }
 }
-console.log(getComputerChoice())
-
-//function PlayerChoice
-function getPlayerChoice() {
-
-    let playerSelect = ["Rock", "Paper", "Scissors"];
-    const input = prompt("123?")
-
-    if (playerSelect === "Rock") {
-        return "Rock";
-    }
-    if (playerSelect === "Paper") {
-        return "Paper";
-    }
-    if (playerSelect === "Scissors") {
-        return "Scissors";
-    }
-}
-console.log(getPlayerChoice("Rock", "Paper", "Scissors"))
