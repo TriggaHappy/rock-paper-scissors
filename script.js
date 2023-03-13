@@ -19,8 +19,9 @@ function checkWinner(playerSelection, computerSelection){
     ){
         return "Player";
     }
-    else 
+    else {
         return "Computer";
+    }
 } 
 
 function playRound(playerSelection, computerSelection){
@@ -31,14 +32,15 @@ function playRound(playerSelection, computerSelection){
     else if (result == "Player")
         return `Oh man, you won! ${playerSelection} beats ${computerSelection}.`;
     
-    else (result == "Computer")
+    else (result == "Computer"); {
         return "Dang the machine won buddy...";
+    }
 }
 
 function game(){
     console.log("Welcome")
     for (let i = 0; i < 5; i++) {
-        const playerSelection = "rock";
+        const playerSelection = prompt("rock");
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection))
     }
